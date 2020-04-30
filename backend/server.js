@@ -9,22 +9,19 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 5000;
 
-
 app.get('/api', (req, res) => {
-  console.log(data.express)
-  res.json({ 
-    express: data.express,
-    userId: data.userId });
+  
+  res.send("ola");
 });
 
-axios.post('/post2')
-  .then(res => {
-    console.log(res)
-  })
-
 app.post('/post', (req, res) => {
-  console.log('POST /')
-})
+  //console.log(req.body.text)
+  let value = parseInt(req.body.text) + 1
+  console.log(value)
+  res.send({value});
+});
+
+
 
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
