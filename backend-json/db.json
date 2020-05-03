@@ -1,0 +1,26 @@
+{
+    "tarefas": [
+        {
+            "id": 1, 
+            "tarefa": "Tarefa número 1"
+        },
+        {
+            "id": 2, 
+            "tarefa": "Tarefa número 2"
+        },
+        {
+            "id": 3, 
+            "tarefa": "Tarefa número 3"
+        },
+        {
+            "id": 4, 
+            "tarefa": "Tarefa número 4"
+        }
+    ],
+    "concluidas": [
+        {
+            "id": 5, 
+            "tarefa": "Tarefa número 5"
+        }
+    ]
+}
