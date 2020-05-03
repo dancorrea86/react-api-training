@@ -11,7 +11,7 @@ class App extends Component {
           <h2>TODO LIST PROJECT</h2>
         </div>
         <div>
-          <input name="" id="" className="form-control m-5" type="text" />
+          <input name="" id="" className="form-control m-5 w-50 d-inline" type="text" />
         </div>
         <div>
           <Tarefas />
