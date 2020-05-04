@@ -5,7 +5,7 @@ class Tarefas extends Component {
     state = {  }
     render() { 
         return (
-            <h2 className="titulo-tarefas ml-5">Tarefas</h2>
+            <h2 className="titulo-tarefas">Tarefas</h2>
           );
     }
 }

@@ -11,13 +11,20 @@ class App extends Component {
           <h2>TODO LIST PROJECT</h2>
         </div>
         <div>
-          <input name="" id="" className="form-control m-5 w-50 d-inline" type="text" />
+          <input className="w-75 mx-auto m-3" name="" id="" type="text" />
         </div>
-        <div>
+        <div className="conteiner-listas w-75 mx-auto m-3">
           <Tarefas />
         </div>
         <div>
-          <Concluidas />
+            
+        </div>
+        <div className="conteiner-listas w-75 mx-auto m-3">
+          <Concluidas/>
+          <button className="btn btn-light">View</button>
+        </div>
+        <div>
+            
         </div>
       </div>
     );
