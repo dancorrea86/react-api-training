@@ -1,9 +1,36 @@
 import React, { Component } from 'react';
 import Tarefas from "./components/Tarefas";
 import Concluidas from "./components/Concluidas";
+import axios from 'axios'
 import './App.css';
 
 class App extends Component {
+
+  state = {
+    tarefas: ''
+  }
+
+  getList = (e) => {
+    e.preventDefault();
+    axios.get(`http://localhost:3004/tarefas`)
+      .then(res => {
+        console.log(res.data)
+        this.setState({tarefas: res.data})
+      })
+  }
+
+  renderList = () => {
+    const lista = this.state.tarefas
+    const listItens = lista.map((itens) =>
+      <li key={itens}>{itens}</li>
+    )
+    return (
+      <div>
+        {listItens}
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className="App">
@@ -13,15 +40,15 @@ class App extends Component {
         <div>
           <input className="w-75 mx-auto m-3" name="" id="" type="text" />
         </div>
-        <div className="conteiner-listas w-75 mx-auto m-3">
+        <div className="conteiner-lists w-75 mx-auto m-3">
           <Tarefas />
         </div>
         <div>
-            
+            {this.renderList}
         </div>
-        <div className="conteiner-listas w-75 mx-auto m-3">
+        <div className="conteiner-lists w-75 mx-auto m-3">
           <Concluidas/>
-          <button className="btn btn-light">View</button>
+          <button className="btn btn-light" onClick={this.getList}>View</button>
         </div>
         <div>
             

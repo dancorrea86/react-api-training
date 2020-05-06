@@ -12,3 +12,8 @@
 .App-intro {
   font-size: large;
 }
+
+.conteiner-lists {
+  display: flex;
+  justify-content: space-between;
+}

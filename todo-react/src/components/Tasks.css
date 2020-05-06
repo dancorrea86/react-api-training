@@ -1,10 +1,5 @@
-.titulo-tarefas {
-    text-align: left;
-    box-sizing: border-box;
-}
-
 .conteiner-listas {
   display: flex;
   justify-content: space-between;
-
+  
 }
