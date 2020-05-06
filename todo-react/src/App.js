@@ -12,7 +12,7 @@ class App extends Component {
 
   getList = (e) => {
     e.preventDefault();
-    axios.get(`http://localhost:3004/tarefas`)
+    axios.get(`http://localhost:5000/tarefas`)
       .then(res => {
         console.log(res.data)
         this.setState({tarefas: res.data})
