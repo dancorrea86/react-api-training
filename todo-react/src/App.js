@@ -4,31 +4,34 @@ import Concluidas from "./components/Concluidas";
 import axios from 'axios'
 import './App.css';
 
+class RenderList extends React.Component {
+
+  render() {
+    console.log(this.props.values)
+    const listItens = this.props.values.map((itens => 
+      <li key={itens.id}>{itens.name}</li>))
+    console.log(listItens)
+    return (
+      <ul>
+          {listItens}
+      </ul>
+    )
+  }
+}
+
 class App extends Component {
 
   state = {
-    tarefas: ''
+    tarefas: []
   }
 
   getList = (e) => {
     e.preventDefault();
-    axios.get(`http://localhost:5000/tarefas`)
+    axios.get(`/tarefas`)
       .then(res => {
-        console.log(res.data)
+        //console.log(res.data)
         this.setState({tarefas: res.data})
       })
-  }
-
-  renderList = () => {
-    const lista = this.state.tarefas
-    const listItens = lista.map((itens) =>
-      <li key={itens}>{itens}</li>
-    )
-    return (
-      <div>
-        {listItens}
-      </div>
-    )
   }
 
   render() {
@@ -44,7 +47,7 @@ class App extends Component {
           <Tarefas />
         </div>
         <div>
-            {this.renderList}
+            <RenderList values={this.state.tarefas}/>
         </div>
         <div className="conteiner-lists w-75 mx-auto m-3">
           <Concluidas/>
