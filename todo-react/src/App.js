@@ -5,6 +5,21 @@ import Listas from "./components/Lista"
 import axios from 'axios'
 import './App.css';
 
+class RenderList extends React.Component {
+
+  render() {
+    console.log(this.props.values)
+    const listItens = this.props.values.map((itens => 
+      <li key={itens.id}>{itens.name}</li>))
+    console.log(listItens)
+    return (
+      <ul>
+          {listItens}
+      </ul>
+    )
+  }
+}
+
 class App extends Component {
 
   state = {
@@ -15,13 +30,9 @@ class App extends Component {
     e.preventDefault();
     axios.get(`/tarefas`)
       .then(res => {
-        console.log(res.data)
+        //console.log(res.data)
         this.setState({tarefas: res.data})
       })
-  }
-
-  getTarefas = () => {
-    console.log(this.state.tarefas)
   }
 
   render() {
