@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Tarefas from "./components/Tarefas";
 import Concluidas from "./components/Concluidas";
+import Listas from "./components/Lista"
 import axios from 'axios'
 import './App.css';
 
@@ -47,11 +48,12 @@ class App extends Component {
           <Tarefas />
         </div>
         <div>
-            <RenderList values={this.state.tarefas}/>
+            <Listas value={this.state.tarefas} />
         </div>
         <div className="conteiner-lists w-75 mx-auto m-3">
           <Concluidas/>
           <button className="btn btn-light" onClick={this.getList}>View</button>
+          <button className="btn btn-light" onClick={this.getTarefas}>Viwe Tarefas</button>
         </div>
         <div>
             
@@ -60,5 +62,7 @@ class App extends Component {
     );
   }
 }
+
+
 
 export default App;
